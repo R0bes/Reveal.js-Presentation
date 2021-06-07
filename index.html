@@ -17,9 +17,87 @@
 		<div class="reveal">
 			<div class="slides">
 				
+
+
 				<section>
 					<h2>reveal.js</h2>
-					<p>reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.</p>
+					<p>How to make this presentation</p>
+				</section>				
+
+
+
+				<section>
+					<h2>Setup a reveal.js project</h2>
+					<p>There are 3 options presented at <a href="https://revealjs.com/installation/">revealjs.com/installation</a></p>
+					<ul>
+						<li>Basic (recommended)</li>
+						<li>Full (for developement)</li>
+						<li>As node dependency (limited use)</li>
+					</ul>
+				</section>
+
+
+
+				<section>
+					<h2>Basic Setup for a reveal.js project</h2>
+					<ul>
+						<li>Download the <a href="https://github.com/hakimel/reveal.js/archive/master.zip">latest reveal.js version</a></li>
+						<li>Unzip and replace the example contents in index.html with your own</li>
+						<li>Open index.html in a browser to view it</li>
+					</ul>
+				</section>
+
+
+
+				<section>
+					<h2>Head</h2>
+					<pre><code class="hljs html" data-trim data-line-numbers="|2|3|4|5,6|7|8"><script type="text/template">
+						<head>
+							<meta charset="utf-8">
+							<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">							
+							<title>reveal.js</title>
+							<link rel="stylesheet" href="dist/reset.css">
+							<link rel="stylesheet" href="dist/reveal.css">
+							<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+							<link rel="stylesheet" href="plugin/highlight/monokai.css">
+							...
+						</head>
+					</script></code></pre>
+				</section>
+
+
+
+				<section>
+					<h2>Body - End</h2>
+					<pre><code class="hljs html" data-trim data-line-numbers="|1|2-4|5-10">
+							&#60;script src="dist/reveal.js"/&#62;
+							&#60;script src="plugin/notes/notes.js"/&#62;
+							&#60;script src="plugin/markdown/markdown.js"/&#62;
+							&#60;script src="plugin/highlight/highlight.js"/&#62;
+							&#60;script&#62;
+									Reveal.initialize({
+										hash: true,
+										plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+									});
+							&#60;/script&#62;
+						&#60;/body&#62;
+					</code></pre>
+				</section>
+
+
+
+				<section>
+					<h2>Body</h2>
+					<pre><code class="hljs html" data-trim data-line-numbers>
+						&#60;body&#62;
+							&#60;div&#62;
+								&#60;div&#62;
+									&#60;section&#62;
+										&#60;/section&#62;
+									&#60;/div&#62;
+								&#60;/div&#62;
+						</body>
+					</code></pre>
 				</section>
 
 			</div>
@@ -30,13 +108,9 @@
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
+				width: 1400,
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
