@@ -9,141 +9,98 @@
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/black.css">
-
-		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-		<link rel="stylesheet" href="plugin/highlight/my_language/terraform.css">
+		<link rel="stylesheet" href="plugin/highlight/my_language/mylanguage.css">
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				
-
 
 				<section>
 					<h2>reveal.js</h2>
-					<p>How to make this presentation</p>
-				</section>				
-
-
-
-				<section>
-					<h2>Setup a reveal.js project</h2>
-					<p class="fragment">There are 3 <a href="https://revealjs.com/installation/">options</a> at the homepage.</p>
-					<p class="fragment">We use the basic one.</p>
 					
 					<aside class="notes">
+						<p>Some speaker notes!</p>
 						<ul>
-							<li>Basic (recommended)</li>
-							<li>Full (for developement)</li>
-							<li>As node dependency (limited use)</li>
+							<li>A</li>
+							<li>B</li>
+							<li>C</li>
 						</ul>
 					</aside>
-				</section>
-
-
+				</section>				
 
 				<section>
-					<h2>Basic Setup</h2>
+					<h2>New Presentation</h2>
 					<ul>
-						<li class="fragment">Download the <a href="https://github.com/hakimel/reveal.js/archive/master.zip">latest reveal.js</a> version</li>
-						<li class="fragment">Extract all files to your <u>dest directory</u></li>
-						<li class="fragment">run npm install && npm start in <u>dest directory</u></li>
-						<li class="fragment">Open <a href="localhost:8000">localhost:8000</a> in your browser</li>
+						<li>Download the <a href="https://github.com/hakimel/reveal.js/archive/master.zip">latest reveal.js</a> version</li>
+						<li>Extract all files to your destination directory</li>
+						<li>run npm install && npm start in destination directory</li>
+						<li>Open <a href="localhost:8000">localhost:8000</a> in your browser</li>
+						<li>Replace content of index.html</li>
 					</ul>
 				</section>
-
 
 				<section>
 					<h2>html document</h2>
 					<ul>
-						<li class="fragment">default is index.html</li>
-						<li class="fragment">other pages (<a href="localhost:8000/demo.html">localhost:8000/demo.html</a>)</li>
-						<li class="fragment">html document
+						<li>default: index.html</li>
+						<li>other pages (<a href="localhost:8000/demo.html">localhost:8000/demo.html</a>)</li>
+						<li>html document
 							<ul>
-								<li class="fragment">head
-									<ul>
-										<li class="fragment">metadata (encoding, viewport)</li>
-										<li class="fragment">title</li>
-										<li class="fragment">styling (css files)</li>
-									</ul>
-								</li>
-								<li class="fragment">body
-									<ul>
-										<li class="fragment">content</li>
-										<li class="fragment">scripts (reveal, plugins, initialization)</li>
-									</ul>
-								</li>
+								<li>title</li>
+								<li>css</li>
+								<li>scripts (reveal configuration, plugins)</li>
+								<li>content</li>
+								<li>etc</li>
 							</ul>
 						</li>
 					</ul>
 				</section>
 
-
-
 				<section>
-					<h2>Head</h2>
-					<pre><code class="hljs html" data-trim data-line-numbers="|2,3|4|5,6"><script type="text/template">
-						<head>
-							<meta charset="utf-8">
-							<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">							
-							<title>reveal.js presentation</title>
-							<link rel="stylesheet" href="dist/reveal.css">
-							...
-						</head>
-					</script></code></pre>
-				</section>
-
-				<section>
-					<h2>Body</h2>
-					<pre><code class="hljs html" data-trim data-line-numbers="|2,3,8,9|4-7|10"><script type="text/template">						
-						<body>
-							<div class="reveal">
-								<div class="slides">
-									<section>
-										<h2>reveal.js</h2>
-										<p>How to make this presentation</p>
-									</section>
-								</div>
-							</div>
-							...
-						</body>
-					</script></code></pre>
-				</section>
-
-
-				<section>
-					<h2>Body - Plugins</h2>
-					<pre><code class="hljs html" data-trim data-line-numbers="|1|2,7|4-9">
-							&#60;script src="dist/reveal.js"/&#62;
-							&#60;script src="plugin/zoom/zoom.js"/&#62;
-							...
+					<h2>Plugins</h2>
+					<pre><code class="html" data-trim data-line-numbers>
+							&#60;script src="plugin/highlight/highlight.js"/&#62;
 							&#60;script&#62;
 									Reveal.initialize({
 										hash: true,
-										plugins: [ RevealZoom ]
+										plugins: [ RevealHighlight ]
 									});
 							&#60;/script&#62;						
 					</code></pre>
-					
-					<aside class="notes">
-						<ul>
-							<li>Include the plugin script in the document.</li>
-							<li>Some plugins may require styles.</li>
-							<li>Tell reveal.js about the plugin by including it in the plugins array when initializing.</li>
-						</ul>
-					</aside>
 				</section>
 
-
-				<section>
-					<pre><code class="hljs mylanguage" data-trim data-line-numbers>
-						my super foo language
-						foo bar baz
-						a = 42					
+				<section data-auto-animate>
+					<h2 data-id="code-title">Custom Language</h2>
+					<pre data-id="code-animation"><code class="hljs ml" data-trim data-line-numbers>
+						my super language
+						...
+						a = 42
 					</code></pre>
 				</section>
 
+				<section data-auto-animate>
+					<h2 data-id="code-title">With line highlightling</h2>
+					<pre data-id="code-animation"><code class="hljs ml" data-trim data-line-numbers="|1|2|3-4|5"><script type="text/template">
+						my super language
+						foo
+						bar
+						baz
+						a = 42
+					</script></code></pre>
+				</section>	
+
+				<section data-auto-animate>
+					<h2 data-id="code-title"><a href="https://github.com/hakimel/reveal.js/wiki/Example-Presentations">Example Presentations</a></h2>
+					<ul>
+						<li><a href="https://paambaati.github.io/rendering-at-scale/#/">Rendering</a></li>
+						<li><a href="https://gabryxx7.github.io/slides.html#/">Cool Background</a></li>
+						<li><a href="http://www.cip.ifi.lmu.de/~nickel/iswc2012-slides/#/">Nice Backgrounds/Animations</a></li>
+						<li><a href="https://www.cfr.org/arab-uprisings-five-years/#!/">Website background</a></li>
+						<li><a href="http://david.coullet.info/#!/summary">As web cv</a></li>
+						<li><a href="http://courses.telematique.eu/reveal.js-plugins/audio-slideshow-demo.html#/">Audio Plugins</a></li>
+					</ul>
+				</section>			
 			</div>
 		</div>
 
@@ -152,20 +109,20 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
-		<script src="plugin/highlight/my_language/terraform.js"></script>
+		<script src="plugin/highlight/my_language/mylanguage.js"></script>
 		<script>
 			Reveal.initialize({
 				hash: true,
 				width: 1400,
-				plugins: [ RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes ],
 			}).then(() => {
 			    const hljs = RevealHighlight().hljs;
 			    hljs.registerLanguage("mylanguage", hljsDefineMyLanguage)
     			hljs.initHighlightingOnLoad();
-			    Array.from(Reveal.getRevealElement().querySelectorAll('pre')).forEach((block) => {
-			        RevealHighlight().highlightBlock(block);
+			    Array.from(Reveal.getRevealElement().querySelectorAll('pre code')).forEach((block) => {
+    				hljs.highlightElement(block);
 			    });
-			});
+			});			
 		</script>
 	</body>
 </html>

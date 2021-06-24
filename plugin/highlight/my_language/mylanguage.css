@@ -1,20 +1,9 @@
-
-.hljs {
-    display: block;
-    overflow-x: auto;
-    padding: 0.5em;
-    background: #272822;
-    color: #ddd;
+  
+.hljs-foo {
+  color: #77e4f0;
 }
 
-.hljs-literal {
-    color: #2200ff;
-}
-
-.hljs-keyword {
-    color: #d0795a;
-}
 
 .hljs-number {
-  color: #c0e991;
+  color: #fff71c;
 }
